@@ -12,7 +12,7 @@ def render(fps: int) -> None:
     try:
         canvas = list(gts())
         ## brush = [sym[0], color[1], posx[2], posy[3], sizex[4], sizey[5], speedx[6], speedy[7], bool[8]]
-        brush = ["#", 0, 1, 1, 4, 3, 2, 1, False]
+        brush = [",", 0, 1, 1, 4, 3, 2, 1, False]
         while True:
 
             ## etc
@@ -53,10 +53,10 @@ def render(fps: int) -> None:
             print(draw_rectangle(brush[0], 0, brush[2], brush[3], brush[4], brush[5]))
             sl(0.01)
             print(draw_rectangle(brush[0], brush[1], brush[2], brush[3], brush[4], brush[5]))
-            print(draw_line(".", 245, 0, 0, canvas[0], 0))
-            print(draw_line(".", 245, canvas[0], 0, canvas[0], canvas[1]-2))
-            print(draw_line(".", 245, 0, 0, 0, canvas[1]-2))
-            print(draw_line(".", 245, 0, canvas[1]-2, canvas[0], canvas[1]-2))
+            print(draw_line("=", 245, 0, 0, canvas[0], 0))
+            print(draw_line("|", 245, canvas[0], 0, canvas[0], canvas[1]-2))
+            print(draw_line("|", 245, 0, 0, 0, canvas[1]-2))
+            print(draw_line("=", 245, 1, canvas[1]-2, canvas[0]-2, canvas[1]-2))
 
             sl(1/fps)
     except KeyboardInterrupt:
