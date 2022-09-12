@@ -50,6 +50,8 @@ def render(fps: int) -> None:
                     brush[4], brush[5] = size[1]*2, size[1]
 
             ## canvas
+            print(draw_rectangle(brush[0], 0, brush[2], brush[3], brush[4], brush[5]))
+            sl(0.01)
             print(draw_rectangle(brush[0], brush[1], brush[2], brush[3], brush[4], brush[5]))
             print(draw_line(".", 245, 0, 0, canvas[0], 0))
             print(draw_line(".", 245, canvas[0], 0, canvas[0], canvas[1]-2))
