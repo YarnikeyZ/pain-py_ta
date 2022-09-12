@@ -10,6 +10,8 @@ Coloring thingi inside of terminal
 * https://github.com/YarnikeyZ/pypixpile
 * keyboard lib for python3, so sudo for linux
 
-## Screenshot
+## Screenshots
 
-![sertified](https://user-images.githubusercontent.com/83335375/189681120-5ef198dc-b03f-4fe0-af5f-50f465da2534.png)
+![screenshot1](https://user-images.githubusercontent.com/83335375/189681120-5ef198dc-b03f-4fe0-af5f-50f465da2534.png) (1v older)
+
+![screenshot2](https://user-images.githubusercontent.com/83335375/189685029-44e78d23-ffef-4f6b-89c6-283449ed79a3.png) (newest)
