@@ -2,22 +2,21 @@ from os import get_terminal_size as gts
 from time import sleep as sl
 from random import randint as rd
 from sys import argv
-from pixpile.pixpile import *
+from pypixpile.pixpile import *
 from keyboard import is_pressed
-
-clr = "\033[0;0m\033[H\033[2J\033[3J"
 
 def render(fps: int) -> None:
     """Renders an "image" to the screen."""
     try:
         canvas = list(gts())
-        ## brush = [sym[0], color[1], posx[2], posy[3], sizex[4], sizey[5], speedx[6], speedy[7], bool[8]]
+        canvas[1] += -2
+        ## brush = [sym[0], color[1], posX[2], posY[3], sizeX[4], sizeY[5], speedX[6], speedY[7], bool[8]]
         brush = [",", 0, 1, 1, 4, 3, 2, 1, False]
         while True:
 
             ## etc
             if is_pressed('q'):
-                print(clr)
+                print(CLR)
             
             ## brush movement v2
             if is_pressed('a'):
@@ -50,13 +49,13 @@ def render(fps: int) -> None:
                     brush[4], brush[5] = size[1]*2, size[1]
 
             ## canvas
-            print(draw_rectangle(brush[0], 0, brush[2], brush[3], brush[4], brush[5]))
+            print(drawRectangle(brush[0], 0, 0, brush[2], brush[3], brush[4], brush[5]))
             sl(0.01)
-            print(draw_rectangle(brush[0], brush[1], brush[2], brush[3], brush[4], brush[5]))
-            print(draw_line("=", 245, 0, 0, canvas[0], 0))
-            print(draw_line("|", 245, canvas[0], 0, canvas[0], canvas[1]-2))
-            print(draw_line("|", 245, 0, 0, 0, canvas[1]-2))
-            print(draw_line("=", 245, 1, canvas[1]-2, canvas[0]-2, canvas[1]-2))
+            print(drawRectangle(brush[0], brush[1], 0, brush[2], brush[3], brush[4], brush[5]))
+            print(drawLine("=", 245, 245, 0, 0, canvas[0], 0))
+            print(drawLine("|", 245, 245, canvas[0], 0, canvas[0], canvas[1]-2))
+            print(drawLine("|", 245, 245, 0, 0, 0, canvas[1]-2))
+            print(drawLine("=", 245, 245, 1, canvas[1]-2, canvas[0]-2, canvas[1]-2))
 
             sl(1/fps)
     except KeyboardInterrupt:
@@ -64,12 +63,12 @@ def render(fps: int) -> None:
 
 def main():
     """A function responsible for initialization"""
-    print(clr, end="")
+    print(CLR, end="")
     try:
         render(int(argv[1]))
     except IndexError:
         render(int(input("FPS:")))
-    print(clr, end="")
+    print(CLR, end="")
 
 if __name__ == "__main__":
     main()
